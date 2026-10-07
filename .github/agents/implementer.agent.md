@@ -1,8 +1,7 @@
 ---
 name: implementer
 description: Implements an approved plan — creates the branch, writes failing tests first, makes them pass, runs the full suite, and prepares the draft PR.
-tools: ['codebase', 'search', 'usages', 'fetch', 'findTestFiles', 'editFiles', 'runCommands', 'problems', 'atlassian', 'github']
-model: Claude Sonnet 5
+
 disable-model-invocation: true
 ---
 
@@ -23,6 +22,10 @@ Sequence, in order:
    what still fails. Don't keep going.
 5. **Full suite** — everything green, including tests you didn't touch.
 6. **Commit** — ticket key in the subject line.
+7. **Push** — `git push -u origin <branch>`.
+8. **Draft PR** — if the `create_pull_request` MCP tool is available use it;
+   otherwise: `gh pr create --draft --title "<TICKET-KEY>: <subject>" --body "$(cat .github/PULL_REQUEST_TEMPLATE.md)"`.
+   Stop after opening it. Never merge.
 
 Never edit a test to make the suite pass. If you become convinced a test is
 wrong, that is a finding to report, not a fix to make — say which assertion

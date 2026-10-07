@@ -4,11 +4,7 @@ description: Push the branch, open a draft pull request with evidence, and write
 argument-hint: '(no arguments — ships the current branch)'
 ---
 
-Precondition: `/review` returned **ready for PR**, verbatim. If it returned
-"not ready", stop — you may not overrule it. The reviewer reads the diff
-rather than your session transcript, and that difference is the point: if the
-evidence is only in your context and not in the artifacts, a human reviewer
-cannot see it either. Address the findings and re-run `/review`.
+Precondition: full suite green and `/review` came back ready. If not, stop.
 
 1. **Push** the branch.
 

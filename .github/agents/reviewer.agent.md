@@ -1,8 +1,7 @@
 ---
 name: reviewer
 description: Reviews the diff and the tests before a PR opens — requirement coverage, test integrity, scope discipline, risk. Read-only.
-tools: ['codebase', 'search', 'usages', 'fetch', 'findTestFiles', 'github']
-model: GPT-5.3-Codex
+
 disable-model-invocation: true
 ---
 

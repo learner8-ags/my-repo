@@ -1,8 +1,7 @@
 ---
 name: planner
 description: Reads a Jira ticket and inspects the repository, then produces an implementation plan and a test plan mapped to the acceptance criteria. Never edits code.
-tools: ['codebase', 'search', 'usages', 'fetch', 'findTestFiles', 'atlassian', 'github']
-model: GPT-5.3-Codex
+
 disable-model-invocation: true
 ---
 
